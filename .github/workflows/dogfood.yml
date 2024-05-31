@@ -24,9 +24,9 @@ jobs:
         with:
           maven-version: 3.9.6
       - name: Run Autograding with test data
-        uses: uhafner/autograding-github-action@main
+        uses: MuyleangIng/autu_grade@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           checks-name: "Autograding with Test Data"
           config: >
             {
@@ -119,7 +119,6 @@ jobs:
               ]
             }
   grade-github-action:
-    name: Run autograding for the GitHub Autograding Action
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -137,9 +136,9 @@ jobs:
       - name: Build
         run: mvn -ntp clean verify -Pci -Ppit -Pdepgraph
       - name: Run Autograding
-        uses: uhafner/autograding-github-action@main
+        uses: MuyleangIng/autu_grade@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GH_TOKEN }}
           checks-name: "Autograding GitHub Action"
       - name: Write metrics to GitHub output
         id: metrics
@@ -184,8 +183,8 @@ jobs:
       - name: Commit updated badges
         continue-on-error: true
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "muyleanging@gmail.com"
+          git config --local user.name "MuyleangIng"
           git add badges/*.svg
           git commit -m "Update badges with results from latest autograding" || true
           git add doc/dependency-graph.puml
@@ -194,5 +193,5 @@ jobs:
         uses: ad-m/github-push-action@master
         if: ${{ success() }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           branch: main

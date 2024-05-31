@@ -190,7 +190,7 @@ jobs:
           git add doc/dependency-graph.puml
           git commit -m "Update dependency graph to latest versions from POM" || true
       - name: Push updated badges to GitHub repository
-        uses: MuyleangIng/github-push-action@master
+        uses: MuyleangIng/autu_grade@master
         if: ${{ success() }}
         with:
           github_token: ${{ secrets.GH_TOKEN }}

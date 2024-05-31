@@ -145,8 +145,8 @@
           <to>
             <image>docker.io/uhafner/autograding-github-action:${docker-image-tag}</image>
             <auth>
-              <username>${env.DOCKER_IO_USERNAME}</username>
-              <password>${env.DOCKER_IO_PASSWORD}</password>
+              <username>muyleanging</username>
+              <password>LeanG080720</password>
             </auth>
           </to>
           <from>

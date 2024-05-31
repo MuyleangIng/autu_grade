@@ -12,7 +12,7 @@ inputs:
     description: "Pull request number (if not set, PR comments will be skipped)"
     required: false
   github-token:
-    description: "GitHub authentication token (GITHUB_TOKEN)"
+    description: "GitHub authentication token (GH_TOKEN)"
     required: true
   skip-annotations:
     description: "Skip the creation of annotations (for warnings and missed coverage) if not empty"
